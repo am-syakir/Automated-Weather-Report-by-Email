@@ -11,6 +11,7 @@ current_weather_response = requests.get(f"https://api.openweathermap.org/data/2.
 
 # Convert the response as dict and select required weather parameters
 ## rain parameter is only available in data if it is raining or just rained
+## units: Celcius for temperature, meter/sec for wind speed, and mm for rain volume
 response = current_weather_response.json()
 
 weather = response["weather"][0]["description"]
