@@ -27,7 +27,7 @@ conn = smtplib.SMTP('smtp.gmail.com', 587)
 conn.ehlo()
 conn.starttls()
 
-conn.login('{sender_email}', '{16_key_google_app_password}')
+conn.login('{sender_email}', '{sender_16_key_google_app_password}')
 
 
 # Loop for sending the emails one by one with formatted message
