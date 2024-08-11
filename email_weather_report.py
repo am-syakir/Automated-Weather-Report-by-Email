@@ -4,7 +4,7 @@ import smtplib
 
 
 # Use requests lib to pull the current weather
-Key_API = "e760a014ff45365443a294b151a7368a"
+Key_API = "{openweathermap API key}"
 current_weather_response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=Kuala Lumpur&appid={Key_API}&units=metric")
 
 
@@ -26,17 +26,17 @@ conn = smtplib.SMTP('smtp.gmail.com', 587)
 conn.ehlo()
 conn.starttls()
 
-conn.login('amsyakir@gmail.com', 'pxuipvknosybqgqr')
+conn.login('{sender email}', '{16 key google app password}')
 
 
 # Loop for sending the emails one by one with formatted message
-email_list = ['eloncook31@gmail.com', 'stevezuckerberg2018@gmail.com', 'jeffcookdata@gmail.com', 'amsyakir@gmail.com']
+email_list = ['{email 1}', '{email 2}', '{email 3}', '{email 4']
 
 for email in email_list:
-    sender = 'amsyakir@gmail.com'
+    sender = '{sender email}'
     receivers = email
 
-    message = ("From: Amirul Syakirin <amsyakir@gmail.com>\n" +
+    message = ("From: {sender name} <{sender email}>\n" +
                "To:" + email.split('@')[0] + "<" + email + ">\n" +
                "Subject: Today's Weather Report\n" +
                "TODAY'S WEATHER\n" +
